@@ -1,4 +1,5 @@
-//
+// Adrián Fernández Rodríguez
+// https://github.com/adriferro/DWEC_Practica3.git
 
 export let name;
 export let surname;
