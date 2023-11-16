@@ -1,6 +1,12 @@
-export function noFirstThree(){
-    const nameWithoutThree = allName.substring(3); 
-    document.write(`Tu nombre completo <strong>menos las tres primeras letras</strong> es <strong>${nameWithoutThree}</strong>`);
-    document.write(`<br>`)
-    document.write(`<br>`)
+import { name, surname } from "./prompts.js";
+
+function noFirstThree() {
+    const fullName = name + " " + surname;
+    const noName = fullName.slice(3);
+
+    const message = document.createElement('p');
+    message.innerHTML = `Tu nombre <strong>menos las tres primeras letras</strong> sería: <strong>${noName}</strong>`;
+    document.body.appendChild(message);
 }
+
+noFirstThree();
