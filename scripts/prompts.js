@@ -6,53 +6,53 @@ export let surname;
 export let date;
 
 function inputName() {
-    name = prompt("Por favor, introduzca su nombre");
+    name = prompt("Introduzca su nombre:");
 
     if (name === "") {
-        alert("El campo no puede estar vacío");
+        alert("El campo no puede estar vacío.");
         inputName();
     } else if (!/^[\p{L}\s]+$/u.test(name)) {
-        alert("Nombre inválido");
+        alert("Nombre inválido.");
         inputName();
     }
 }
 
 
 function inputSurname() {
-    surname = prompt("Por favor, introduzca sus apellidos");
+    surname = prompt("Introduzca sus apellidos:");
 
     if (surname === "") {
-        alert("El campo no puede estar vacío");
+        alert("El campo no puede estar vacío.");
         inputSurname();
     } else if (!/^[\p{L}\s]+$/u.test(surname)) {
-        alert("Apellidos inválidos");
+        alert("Apellidos inválidos.");
         inputSurname();
     }
 }
 
 function dateInput() {
-    let dateStr = prompt("Por favor, introduzca su fecha de nacimiento dd/mm/aaaa");
+    let insertDate = prompt("Introduzca su fecha de nacimiento en formato (dd/mm/aaaa):");
 
-    if (!dateStr) {
-        alert("El campo no puede estar vacío");
+    if (!insertDate) {
+        alert("El campo no puede estar vacío.");
         dateInput();
-    } else if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
-        alert("Formato incorrecto");
+    } else if (!/^\d{2}\/\d{2}\/\d{4}$/.test(insertDate)) {
+        alert("Formato incorrecto.");
         dateInput();
     } else {
-        let parts = dateStr.split('/');
+        let parts = insertDate.split('/');
         let day = parseInt(parts[0]);
         let month = parseInt(parts[1]);
         let year = parseInt(parts[2]);
 
         if (isNaN(day) || isNaN(month) || isNaN(year) || day === 0 || month === 0 || year === 0) {
-            alert("La fecha no es válida");
+            alert("Fecha inválida.");
             dateInput();
         } else {
             date = new Date(year, month - 1, day);
 
             if (isNaN(date.getTime())) {
-                alert("Fecha no válida");
+                alert("Fecha inválida.");
                 dateInput();
             }
         }
