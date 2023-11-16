@@ -1,19 +1,19 @@
-export function lastA(){
-    let lastPosition = -1
+import { name, surname } from "./prompts.js";
 
-    for (let i = allName.length - 1; i >= 0; i--) {
-        if (allName.charAt(i).toLowerCase() === 'a') {
-            lastPosition = i + 1;
-            break; 
-        }
-    }
+function lastA() {
+    const fullName = (name + " " + surname).toLowerCase();
 
-    if (lastPosition !== -1) {
-        document.write(`La <strong>última letra 'A'</strong> se encuentra en la posición <strong>${lastPosition}</strong> del nombre`);
+    const lastA = fullName.lastIndexOf('a') + 1;
+
+    if (lastA === 0) {
+        const message = document.createElement('p');
+        message.innerHTML = "Tu nombre no contiene ninguna letra 'A'";
+        document.body.appendChild(message);
     } else {
-        document.write("No se encontró la letra 'A' en el nombre.");
+        const message = document.createElement('p');
+        message.innerHTML = `<strong>La última letra 'A'</strong> de tu nombre está en la posición: <strong>${lastA}</strong>`;
+        document.body.appendChild(message);
     }
-    document.write(`<br>`)
-    document.write(`<br>`)
-
 }
+
+lastA();

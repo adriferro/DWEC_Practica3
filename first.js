@@ -1,18 +1,27 @@
-export function firstA(){
-    let position = -1 
+import { name, surname } from "./prompts.js";
 
-    for (let i = 0; i < allName.length; i++) {
-        if (allName.charAt(i).toLowerCase() === 'a') {
-            position = i + 1; 
-            break; 
+function firstA() {
+    let count = 0;
+
+    const fullName = (name + " " + surname).toLowerCase();
+
+    for (let i = 0; i < fullName.length; i++) {
+        const char = fullName[i];
+        count++;
+
+        if (char === 'a') {
+            const message = document.createElement('p');
+            message.innerHTML = `<strong>La primera letra 'A'</strong> de tu nombre está en la posición: <strong>${count}</strong>`;
+            document.body.appendChild(message);
+            break;
         }
     }
 
-    if (position !== -1) {
-        document.write(`La <strong>primera letra 'A'</strong> se encuentra en la posición <strong>${position}</strong> del nombre`)
-    } else {
-        document.write("No se encontró la letra 'A' en el nombre.")
+    if (count === fullName.length) {
+        const message = document.createElement('p');
+        message.innerHTML = "Tu nombre no tiene ninguna 'A'";
+        document.body.appendChild(message);
     }
-    document.write(`<br>`)
-    document.write(`<br>`)
 }
+
+firstA();

@@ -1,6 +1,9 @@
-export function helloName(){
-    let firstName = allName.split(" ")
-    document.write (`Buenos dias, <strong>${firstName[0]}</strong> `)
-    document.write(`<br>`)
-    document.write(`<br>`)
+import { name } from "./prompts.js"
+
+function helloName(){
+    const message = document.createElement('p');
+    message.innerHTML = `Buenos días <strong>${name}</strong>`;
+    document.body.appendChild(message);
 }
+
+helloName()
