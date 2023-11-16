@@ -1,4 +1,4 @@
-import { date } from "./prompts";
+import { date } from "./prompts.js";
 
 function seasonBirth() {
     const month = date.getMonth() + 1;

@@ -1,12 +1,12 @@
 import { name, surname } from "./prompts.js"
 
-function mayus() {
+function capitalLetter() {
     const fullName = name + " " + surname;
-    const mayusName = fullName.toUpperCase();
+    const capLetName = fullName.toUpperCase();
 
     const message = document.createElement('p');
-    message.innerHTML = `Tu nombre todo en <strong>mayúsculas</strong> sería: <strong>${mayusName}</strong>`;
+    message.innerHTML = `Tu nombre todo en <strong>mayúsculas</strong> sería: <strong>${capLetName}</strong>`;
     document.body.appendChild(message);
 }
 
-mayus();
+capitalLetter();
