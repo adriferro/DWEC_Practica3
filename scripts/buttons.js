@@ -1,27 +1,24 @@
-function newWindow() {
-    const windowButton = document.createElement('button');
-    windowButton.innerHTML = "Abrir ventana";
-    windowButton.id = "window";
-    document.body.appendChild(windowButton);
-
-    const restartButton = document.createElement('button');
-    restartButton.innerHTML = "Reiniciar";
-    restartButton.id = "restart";
-    document.body.appendChild(restartButton);
+function createButton(text, id) {
+    const button = document.createElement('button');
+    button.innerHTML = text;
+    button.id = id;
+    document.body.appendChild(button);
+    return button;
 }
 
-newWindow();
+function openNewWindow() {
+    const newWindowButton = createButton("Abrir ventana", "window");
+    const restartButton = createButton("Reiniciar", "restart");
 
-const ventana = document.getElementById("window");
+    newWindowButton.addEventListener("click", () => {
+        const nuevaVentana = "resizable=no";
+        window.open("http://127.0.0.1:5500/templates/newWindow.html", "_blank", nuevaVentana);
+    });
 
-ventana.addEventListener("click", () => {
-    const nuevaVentana = "resizable=no";
+    restartButton.addEventListener("click", () => {
+        window.location.href = "http://127.0.0.1:5500/index.html";
+    });
+}
 
-    window.open("http://127.0.0.1:5500/templates/nueva-ventana.html", "_blank", nuevaVentana);
-});
+openNewWindow();
 
-const restart = document.getElementById("restart");
-
-restart.addEventListener("click", () => {
-    window.location.href = "http://127.0.0.1:5500/index.html";
-});

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Ventana</title>
+</head>
+
+<body>
+    <h1>Ejemplo de Ventana Nueva</h1>
+
+    <p>URL Completa: <span id="url"></span></p>
+
+    <p>Protocolo Utilizado: <span id="protocolo"></span></p>
+
+    <iframe src="https://hotellallastra.app/inicio" width="800" height="600" frameborder="0"></iframe>
+
+    <br>
+
+    <button onclick="cerrarVentana()">Cerrar Ventana</button>
+
+    <script>
+        const url = window.location.href;
+        document.getElementById("url").textContent = url;
+
+        const protocolo = window.location.protocol;
+        document.getElementById("protocolo").textContent = protocolo;
+
+        function cerrarVentana() {
+            window.close();
+        }
+    </script>
+</body>
+
+</html>
