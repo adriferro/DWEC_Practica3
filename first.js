@@ -1,15 +1,15 @@
 export function firstA(){
-    let posicion = -1 
+    let position = -1 
 
-    for (let i = 0; i < nombreCompleto.length; i++) {
-        if (nombreCompleto.charAt(i).toLowerCase() === 'a') {
-            posicion = i + 1; 
+    for (let i = 0; i < allName.length; i++) {
+        if (allName.charAt(i).toLowerCase() === 'a') {
+            position = i + 1; 
             break; 
         }
     }
 
-    if (posicion !== -1) {
-        document.write(`La <strong>primera letra 'A'</strong> se encuentra en la posición <strong>${posicion}</strong> del nombre`)
+    if (position !== -1) {
+        document.write(`La <strong>primera letra 'A'</strong> se encuentra en la posición <strong>${position}</strong> del nombre`)
     } else {
         document.write("No se encontró la letra 'A' en el nombre.")
     }

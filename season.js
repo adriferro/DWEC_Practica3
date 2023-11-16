@@ -1,18 +1,18 @@
 export function season(){
-    let estacion = '';
+    let seasonBorn = '';
 
-    if (mesNacimiento >= 1 && mesNacimiento <= 12) {
-        if (mesNacimiento >= 3 && mesNacimiento <= 5) {
-            estacion = 'Primavera';
-        } else if (mesNacimiento >= 6 && mesNacimiento <= 8) {
-            estacion = 'Verano';
-        } else if (mesNacimiento >= 9 && mesNacimiento <= 11) {
-            estacion = 'Otoño';
+    if (monthBorn >= 1 && monthBorn <= 12) {
+        if (monthBorn >= 3 && monthBorn <= 5) {
+            seasonBorn = 'Primavera';
+        } else if (monthBorn >= 6 && monthBorn <= 8) {
+            seasonBorn = 'Verano';
+        } else if (monthBorn >= 9 && monthBorn <= 11) {
+            seasonBorn = 'Otoño';
         } else {
-            estacion = 'Invierno';
+            seasonBorn = 'Invierno';
         }
 
-        document.write(`Naciste un feliz dia de <strong>${estacion}</strong> del año <strong>${anioNacimiento}</strong>`);
+        document.write(`Naciste un feliz dia de <strong>${seasonBorn}</strong> del año <strong>${ageBorn}</strong>`);
     } else {
         document.write('El mes de nacimiento ingresado no es válido.');
     }

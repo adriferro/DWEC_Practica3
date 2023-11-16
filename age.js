@@ -1,16 +1,16 @@
 export function age(){
-    const fechaActual = new Date();
-    const diaActual = fechaActual.getDate();
-    const mesActual = fechaActual.getMonth() + 1; 
-    const anioActual = fechaActual.getFullYear();
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1; 
+    const ageBorn = date.getFullYear();
 
-    let edad = anioActual - anioNacimiento;
+    let ageResult = age - ageBorn;
 
-    if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
-        edad--;
+    if (month < monthBorn || (month === monthBorn && day < dayBorn)) {
+        ageResult--;
     }
 
-    document.write(`Tu <strong>edad</strong> es <strong>${edad}</strong> años`);
+    document.write(`Tu <strong>edad</strong> es <strong>${ageResult}</strong> años`);
     document.write(`<br>`)
     document.write(`<br>`)
 }

@@ -1,6 +1,6 @@
 export function capitalLetters(){
-    const nombreEnMayusculas = nombreCompleto.toUpperCase(); 
-    document.write(`Tu nombre completo en <strong>MAYUSCULAS</strong> es <strong>${nombreEnMayusculas}</strong>`);
+    const nameCapitalLetters = nombreCompleto.toUpperCase(); 
+    document.write(`Tu nombre completo en <strong>MAYUSCULAS</strong> es <strong>${nameCapitalLetters}</strong>`);
     document.write(`<br>`)
     document.write(`<br>`)
 }

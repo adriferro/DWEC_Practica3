@@ -1,20 +1,20 @@
 export function biggerNumber(){
  
-    function encontrarMayorNumero(numeros) {
-        let mayor = numeros[0];
+    function encontrarBiggerNumber(numbers) {
+        let big = numbers[0];
 
-        for (let i = 1; i < numeros.length; i++) {
-            if (numeros[i] > mayor) {
-                mayor = numeros[i];
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] > big) {
+                big = numbers[i];
             }
         }
 
-        return mayor;
+        return big;
     }
 
-    const numeros = [34, 67, 23, 75, 35, 19];
-    const mayorNumero = encontrarMayorNumero(numeros);
-    document.write(`El número mayor de <strong>(34, 67, 23, 75, 35, 19)</strong> es ${mayorNumero}`);
+    const numbers = [34, 67, 23, 75, 35, 19];
+    const biggerNumber = encontrarBiggerNumber(numbers);
+    document.write(`El número mayor de <strong>(34, 67, 23, 75, 35, 19)</strong> es ${biggerNumber}`);
     document.write(`<br>`)
     document.write(`<br>`)
 }

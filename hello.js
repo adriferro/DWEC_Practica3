@@ -1,6 +1,6 @@
 export function helloName(){
-    let primerNombre = nombreCompleto.split(" ")
-    document.write (`Buenos dias, <strong>${primerNombre[0]}</strong> `)
+    let firstName = allName.split(" ")
+    document.write (`Buenos dias, <strong>${firstName[0]}</strong> `)
     document.write(`<br>`)
     document.write(`<br>`)
 }
