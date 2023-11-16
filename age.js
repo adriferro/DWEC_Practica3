@@ -1,16 +1,17 @@
-export function age(){
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1; 
-    const ageBorn = date.getFullYear();
+import { date } from "./prompts.js";
 
-    let ageResult = age - ageBorn;
+function ageNum() {
+    const currentDate = new Date();
 
-    if (month < monthBorn || (month === monthBorn && day < dayBorn)) {
-        ageResult--;
-    }
+    const timeDiff = currentDate.getTime() - date.getTime();
 
-    document.write(`Tu <strong>edad</strong> es <strong>${ageResult}</strong> años`);
-    document.write(`<br>`)
-    document.write(`<br>`)
+    const age = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
+
+    const message = document.createElement('p');
+    message.innerHTML = `Su <strong>edad</strong> es: <strong>${age}</strong> años`;
+    document.body.appendChild(message);
+
+    return age;
 }
+
+ageNum();

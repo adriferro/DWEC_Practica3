@@ -1,21 +1,24 @@
-export function season(){
-    let seasonBorn = '';
+import { date } from "./prompts";
 
-    if (monthBorn >= 1 && monthBorn <= 12) {
-        if (monthBorn >= 3 && monthBorn <= 5) {
-            seasonBorn = 'Primavera';
-        } else if (monthBorn >= 6 && monthBorn <= 8) {
-            seasonBorn = 'Verano';
-        } else if (monthBorn >= 9 && monthBorn <= 11) {
-            seasonBorn = 'Otoño';
-        } else {
-            seasonBorn = 'Invierno';
-        }
+function seasonBirth() {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
 
-        document.write(`Naciste un feliz dia de <strong>${seasonBorn}</strong> del año <strong>${ageBorn}</strong>`);
+    let season;
+    if ((month === 3 && day >= 20) || (month > 3 && month < 6) || (month === 6 && day < 21)) {
+        season = "Primavera";
+    } else if ((month === 6 && day >= 21) || (month > 6 && month < 9) || (month === 9 && day < 23)) {
+        season = "Verano";
+    } else if ((month === 9 && day >= 23) || (month > 9 && month < 12) || (month === 12 && day < 22)) {
+        season = "Otoño";
     } else {
-        document.write('El mes de nacimiento ingresado no es válido.');
+        season = "Invierno";
     }
-    document.write(`<br>`)
-    document.write(`<br>`)
+
+    const message = document.createElement('p');
+    message.innerHTML = `Naciste un feliz día de <strong>${season}</strong> del <strong>${year}</strong>`;
+    document.body.appendChild(message);
 }
+
+seasonBirth();

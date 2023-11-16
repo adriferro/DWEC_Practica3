@@ -14,7 +14,10 @@ export function biggerNumber(){
 
     const numbers = [34, 67, 23, 75, 35, 19];
     const biggerNumber = encontrarBiggerNumber(numbers);
-    document.write(`El número mayor de <strong>(34, 67, 23, 75, 35, 19)</strong> es ${biggerNumber}`);
-    document.write(`<br>`)
-    document.write(`<br>`)
+
+    const message = document.createElement('p');
+    message.innerHTML = `El número mayor de <strong>(34, 67, 23, 75, 35, 19)</strong> es ${biggerNumber}`;
+    document.body.appendChild(message);
 }
+
+biggerNumber()
